@@ -1,0 +1,37 @@
+/** Step one **/
+
+/** Step two **/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Freeman", sans-serif;
+}
+
+/** Step three **/
+h1 {
+    font-size: 46px;
+    letter-spacing: 1.5px;
+    text-align: center;
+    color: #129e2e;
+}
+
+/** Step four **/
+p,
+a,
+li {
+    font-family: "Reddit Sans Condensed", sans-serif;
+}
+
+/** Step five **/
+p>span {
+    color: #df1f05;
+}
+
+/** Step six **/
+h3 {
+    font-size: 2.5em;
+    text-shadow: 4px 4px 5px rgba(0, 0, 0, .8);
+}

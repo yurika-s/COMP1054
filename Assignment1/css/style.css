@@ -15,22 +15,37 @@ p {
 /* section */
 .music {
     background-color: rgba(0, 0, 0, 0.4);
-    padding: 5rem 0 6rem;
+    padding: 5rem 2rem 6rem;
     text-align: center;
 }
 
 /* header title of the song */
 .music h1 {
-    font-size: 4.5rem;
+    font-size: 4.5em;
     color: #f8f8f8;
     margin-bottom: 3rem;
+    letter-spacing: -1px;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
 }
 
 /* lyric */
 .music p.lyric {
-    font-size: 1.1rem;
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.1em;
     margin: 1.5rem 0;
-    line-height: 1.5rem
+    line-height: 1.5em;
+}
+
+.saira-medium {
+    font-family: "Saira", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    /* font-style: normal; */
+    font-variation-settings: "wdth" 100;
 }
 
 /* footer */
@@ -40,6 +55,8 @@ footer {
 }
 
 footer>p {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 400;
     font-size: 1.2rem;
     text-align: center;
 }

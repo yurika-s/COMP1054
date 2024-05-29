@@ -45,6 +45,14 @@ p {
     font-variation-settings: "wdth" 100;
 }
 
+.music p.lyric:nth-child(1) .saira-medium {
+    color: #b2f7fb;
+}
+
+.music p.lyric:nth-child(3) .saira-medium {
+    color: #fdfcc8;
+}
+
 /* video */
 .video {
     max-width: 640px;

@@ -1,0 +1,116 @@
+/*
+** Lab 3
+*/
+body {
+    background-color: #f8f8f8;
+    font-family: sans-serif;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "header header header header"
+        "hero hero hero hero"
+        "main main main main"
+        "footer footer footer footer";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", sans-serif;
+}
+
+p,
+a,
+li {
+    font-size: 1.2em;
+    font-family: "Roboto", sans-serif;
+    text-decoration: none;
+}
+
+/* header */
+header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    height: 150px;
+    background-color: #f6f4e8;
+    padding: 0% 2%;
+}
+header div {
+    flex-grow: 1;
+    width: auto;
+    height: 125px;
+    line-height: 125px;
+}
+
+header menu {
+    list-style: none;
+    display: flex;
+    padding-left: 0px;
+    margin: 0px;
+}
+header menu li {
+    padding: 0px 10px;
+}
+
+/* masthead */
+.lesson-masthead {
+    grid-area: hero;
+}
+.lesson-masthead div {
+    height: 50vh;
+    line-height: 50vh;
+    background-color: #9ec5f1;
+    text-align: center;
+    font-size: 2em;
+}
+
+/* main */
+main {
+    grid-area: main;
+}
+
+main section:nth-child(1) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+main section:nth-child(2) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+main section div {
+    border: 1px solid #4b4d4f;
+    padding: 1rem;
+}
+
+main section h3 {
+    font-size: 1.5em;
+}
+
+/* footer */
+footer {
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+footer div {
+    height: 5rem;
+    line-height: 5rem;
+    text-align: center;
+}
+
+footer div:nth-child(1) {
+    background-color: #bacec1;
+}
+footer div:nth-child(2) {
+    background-color: #e59560;
+}
+footer div:nth-child(3) {
+    background-color: #1d3124;
+}

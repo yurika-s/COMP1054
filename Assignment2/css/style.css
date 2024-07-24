@@ -86,3 +86,84 @@ main section .zoom-in figure {
 .zoom-in .mask h3 {
     padding: 0 .5em;
 }
+
+/* 
+* footer
+*/
+footer {
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    background-color: #f4c603;
+    border-top: #5a1f06 solid 3px;
+    padding: 2rem 0;
+}
+footer h3 {
+    font-size: 1.3em;
+    margin: 0 0 .5rem;
+}
+footer p,
+footer input,
+footer textarea,
+footer div {
+    font-size: 1em;
+    font-weight: 400;
+    margin: 0 0 .3rem;
+}
+/* left area */
+footer>div:nth-child(1) {
+    text-align: center;
+    position: relative;
+    background: url(../image/chocolates.png) no-repeat 50% 100%;
+}
+footer>div:nth-child(1)>div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+footer>div:nth-child(1) img {
+    width: 60%;
+}
+
+/* middle area */
+footer .facilities {
+    display: flex;
+}
+footer .facilities div {
+    margin-right: 2rem;
+}
+
+/* right area */
+/* input, textarea */
+footer form input,
+footer form textarea {
+    display: block;
+    border-radius: 5px;
+    padding: .5em;
+}
+footer form input,
+footer form textarea {
+    width: 70%;
+    border-width: 0;
+}
+footer form input:focus,
+footer form textarea:focus {
+    outline: #5a1f06 2px solid;
+}
+/* submit button */
+footer form button {
+    border-radius: 5px;
+    padding: .3em .8em;
+    background-color: #5a1f06;
+    color: #f0f8ff;
+    font-size: 1em;
+}
+footer form button:hover {
+    background-color: #74574a;
+}
+
+footer form img {
+    width: 15%;
+    vertical-align: middle;
+}

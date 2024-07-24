@@ -1,0 +1,31 @@
+/* 
+* common
+*/
+body {
+    margin: 0;
+    background-color: #FFD200;
+    color: #5a1f06;
+}
+
+h1 {
+    color: #f0f8ff;
+}
+
+/* 
+* header
+*/
+header {
+    background-color: #f0f8ff;
+    text-align: center;
+    padding: .8rem;
+}
+header svg {
+    height: 50px;
+    fill: #5a1f06;
+}
+/* masthead */
+.masthead {
+    padding: 4rem;
+    background: url("../image/hero.jpg") no-repeat;
+    background-size: cover;
+}

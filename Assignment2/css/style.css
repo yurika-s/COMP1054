@@ -29,3 +29,60 @@ header svg {
     background: url("../image/hero.jpg") no-repeat;
     background-size: cover;
 }
+
+/* 
+* main
+*/
+main h2 {
+    font-size: 2.5em;
+    text-align: center;
+}
+
+/* first section */
+main section .row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 4rem;
+}
+/* zoom in */
+main section .zoom-in {
+    padding: 0 1rem;
+}
+
+main section .zoom-in figure {
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    clip-path: circle();
+    margin: 0;
+}
+.zoom-in figure img {
+    width: 100%;
+    height: auto;
+    clip-path: circle();
+    transform: scale(1);
+    transition: all .3s ease-in-out;
+
+}
+.zoom-in figure:hover img {
+    transform: scale(1.5);
+    opacity: .8;
+}
+/* mask */
+.zoom-in .mask {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    opacity: 0;
+    transition: all .25s linear;
+}
+.zoom-in figure:hover .mask {
+    opacity: 1;
+}
+.zoom-in .mask h3 {
+    padding: 0 .5em;
+}

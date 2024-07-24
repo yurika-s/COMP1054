@@ -16,6 +16,8 @@
         rel="stylesheet">
     <!-- css -->
     <link rel="stylesheet" href="./css/style.css">
+    <!-- add icons -->
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css">
     <!-- js/jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
@@ -40,56 +42,72 @@
             to include everyone.
         </h1>
     </section>
-
     <main>
+        <!-- first section: flavors-->
         <section>
             <h2>Flavors</h2>
             <div class="row">
-                <div class="zoom-in">
-                    <figure>
-                        <img src="./image/flavors/milk-chocolate.png" alt="">
-                        <div class="mask">
-                            <h3>Milk Chocolate</h3>
-                        </div>
-                    </figure>
+                <div>
+                    <div class="zoom-in">
+                        <figure>
+                            <img src="./image/flavors/milk-chocolate.png" alt="flavor: milk chocolate">
+                            <div class="mask">
+                                <h3>Milk Chocolate</h3>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="zoom-in">
+                        <figure>
+                            <img src="./image/flavors/peanut.png" alt="flavor:peanut">
+                            <div class="mask">
+                                <h3>Peanut</h3>
+                            </div>
+                        </figure>
+                    </div>
                 </div>
-                <div class="zoom-in">
-                    <figure>
-                        <img src="./image/flavors/peanut.png" alt="">
-                        <div class="mask">
-                            <h3>Peanut</h3>
-                        </div>
-                    </figure>
-                </div>
-                <div class="zoom-in">
-                    <figure>
-                        <img src="./image/flavors/peanut-butter.png" alt="">
-                        <div class="mask">
-                            <h3>Peanut Butter</h3>
-                        </div>
-                    </figure>
-                </div>
-
-                <div class="zoom-in">
-                    <figure>
-                        <img src="./image/flavors/caramel.png" alt="">
-                        <div class="mask">
-                            <h3>Caramel</h3>
-                        </div>
-                    </figure>
+                <div>
+                    <div class="zoom-in">
+                        <figure>
+                            <img src="./image/flavors/peanut-butter.png" alt="flavor:peanut butter">
+                            <div class="mask">
+                                <h3>Peanut Butter</h3>
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="zoom-in">
+                        <figure>
+                            <img src="./image/flavors/caramel.png" alt="flavor:caramel">
+                            <div class="mask">
+                                <h3>Caramel</h3>
+                            </div>
+                        </figure>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- second section: products-->
         <section id="products">
             <h2>Products</h2>
-            <div>
-                <img src="./image/products/milkpng.png" alt="">
-                <img src="./image/products/peanut.jpeg" alt="">
-                <img src="./image/products/variety.png" alt="">
-                <img src="./image/products/pumpkin.png" alt="">
-                <img src="./image/products/brownie.png" alt="">
-                <img src="./image/products/crunch-cookie.png" alt="">
+            <div class="large-screen">
+                <img src="./image/products/milkpng.png" alt="product milk chocolate">
+                <img src="./image/products/peanut.jpeg" alt="product peanut">
+                <img src="./image/products/variety.png" alt="product variety">
+                <img src="./image/products/pumpkin.png" alt="product pumpkin">
+                <img src="./image/products/brownie.png" alt="product brownie">
+                <img src="./image/products/crunch-cookie.png" alt="product crunch cookie">
+            </div>
+            <div class="small-screen">
+                <div>
+                    <img src="./image/products/milkpng.png" alt="product milk chocolate">
+                    <img src="./image/products/peanut.jpeg" alt="product peanut">
+                    <img src="./image/products/variety.png" alt="product variety">
+                </div>
+                <div>
+                    <img src="./image/products/pumpkin.png" alt="product pumpkin">
+                    <img src="./image/products/brownie.png" alt="product brownie">
+                    <img src="./image/products/crunch-cookie.png" alt="product crunch cookie">
+                </div>
             </div>
             <p class="warning">
                 ***<span>Allergens:</span>
@@ -97,6 +115,7 @@
             </p>
         </section>
 
+        <!-- third section: characters-->
         <section>
             <div class="balloon hidden">
                 <h3>
@@ -108,21 +127,26 @@
             </div>
             <img src="./image/characters/all-line.png" alt="m&m's characters">
         </section>
-
-
     </main>
 
     <footer>
         <!-- left area -->
+        <!-- <div> -->
         <div>
+            <div><img src="./image/logo-main.svg" alt="company logo"></div>
+            <p>McLean, Virginia, USA</p>
+            <p>http://www.mars.com</p>
             <div>
-                <div><img src="./image/logo-main.svg" alt="company logo"></div>
-                <p>McLean, Virginia, USA</p>
-                <p>http://www.mars.com</p>
+                <ul>
+                    <li><i class="fa-brands fa-facebook fa-lg"></i></li>
+                    <li><i class="fa-brands fa-square-twitter fa-lg"></i></li>
+                    <li><i class="fa-brands fa-square-instagram fa-lg"></i></li>
+                </ul>
             </div>
         </div>
+        <!-- </div> -->
         <!-- middle area -->
-        <section>
+        <div>
             <h3>Manufacturing Facilities</h3>
             <div class="facilities">
                 <div>
@@ -149,7 +173,7 @@
                     <p>Galena, Kansas</p>
                 </div>
             </div>
-        </section>
+        </div>
         <!-- right area -->
         <div>
             <h3>Contact Form</h3>

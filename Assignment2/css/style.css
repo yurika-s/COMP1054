@@ -43,12 +43,13 @@ ul {
 header {
     background-color: #f0f8ff;
     text-align: center;
-    padding: .8rem;
+    padding-top: .5rem;
 }
 header svg {
-    height: 50px;
+    height: 40px;
     fill: #5a1f06;
 }
+
 /* masthead */
 .masthead {
     padding: 4rem;
@@ -74,10 +75,14 @@ main h2 {
 
 /* first section */
 main section .row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 0 4rem;
+    padding: 0 10rem;
+    display: flex;
+    flex-wrap: nowrap;
 }
+main section .row>div {
+    display: flex;
+}
+
 /* zoom in */
 main section .zoom-in {
     padding: 0 1rem;
@@ -118,10 +123,12 @@ main section .zoom-in figure {
     opacity: 1;
 }
 .zoom-in .mask h3 {
-    padding: 0 .5em;
+    font-size: .8em;
+    padding: 0 .8em;
 }
+
 /* second section */
-main>section:nth-child(2) div {
+main>section:nth-child(2) div.large-screen {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
 }
@@ -129,6 +136,9 @@ main>section:nth-child(2) div img {
     width: 100%;
     height: auto;
     border: #5a1f06 1px solid;
+}
+.small-screen {
+    display: none;
 }
 main p.warning {
     text-align: center;
@@ -269,7 +279,7 @@ main section:nth-child(3) img {
     padding: 0;
     font-family: "Spicy Rice", serif;
     font-weight: 500;
-    font-size: 1.5em;
+    font-size: 2em;
     letter-spacing: 1.5px;
 }
 .balloon h3 span:nth-child(1) {
@@ -289,9 +299,8 @@ main section:nth-child(3) img {
 * footer
 */
 footer {
-    grid-area: footer;
-    display: grid;
-    grid-template-columns: 1fr 1.5fr 1fr;
+    display: flex;
+    justify-content: space-around;
     background-color: #f4c603;
     border-top: #5a1f06 solid 3px;
     padding: 2rem 0;
@@ -311,17 +320,18 @@ footer div {
 /* left area */
 footer>div:nth-child(1) {
     text-align: center;
-    position: relative;
-    background: url(../image/chocolates.png) no-repeat 50% 100%;
-}
-footer>div:nth-child(1)>div {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    align-self: center;
+    width: 20%;
 }
 footer>div:nth-child(1) img {
-    width: 60%;
+    width: 50%;
+}
+footer>div:nth-child(1) ul {
+    display: flex;
+    justify-content: center;
+}
+footer>div:nth-child(1) li {
+    margin-right: 10px;
 }
 
 /* middle area */
@@ -333,16 +343,16 @@ footer .facilities div {
 }
 
 /* right area */
+footer>div:nth-child(3) {
+    width: 30%;
+}
 /* input, textarea */
 footer form input,
 footer form textarea {
     display: block;
     border-radius: 5px;
     padding: .5em;
-}
-footer form input,
-footer form textarea {
-    width: 70%;
+    width: 90%;
     border-width: 0;
 }
 footer form input:focus,
@@ -364,4 +374,167 @@ footer form button:hover {
 footer form img {
     width: 15%;
     vertical-align: middle;
+}
+
+/* 
+*  for responsive 
+*/
+@media screen and (max-width: 1355px) {
+    .masthead {
+        padding: 3rem;
+    }
+    .masthead h1 {
+        font-size: 2.5em;
+    }
+    main h2 {
+        font-size: 2em;
+    }
+    main section .row {
+        padding: 0 8rem;
+    }
+}
+@media screen and (max-width: 1024px) {
+    main section .row {
+        padding: 0 6rem;
+    }
+    /* third section */
+    .balloon h3 {
+        font-size: 1.5em;
+        letter-spacing: 1px;
+    }
+}
+
+@media screen and (max-width: 975px) {
+    .masthead {
+        padding: 2rem;
+    }
+    /* first section */
+    main section:nth-child(1) h2 {
+        margin-bottom: 0;
+    }
+    main section .row {
+        padding: 0 8rem;
+        flex-direction: column;
+    }
+    main section .row>div {
+        justify-content: space-around;
+    }
+    main section .row>div:first-child {
+        margin-bottom: 1rem;
+    }
+    main section .zoom-in {
+        width: 30%;
+    }
+    /* third section */
+    .balloon h3 {
+        font-size: 1.3em;
+        letter-spacing: 1px;
+    }
+    main p.warning {
+        padding: 0 1em;
+    }
+    /* footer */
+    footer {
+        flex-direction: column-reverse;
+    }
+    footer h3 {
+        font-size: 1.5em;
+    }
+    footer>div:nth-child(1) {
+        width: 100%
+    }
+    footer>div:nth-child(1) img {
+        width: 15%;
+    }
+    footer>div:nth-child(2) {
+        display: none;
+    }
+    footer>div:nth-child(3) {
+        width: 100%;
+        text-align: center;
+    }
+    footer form {
+        width: 80%;
+        margin: 0 auto;
+    }
+    footer form input,
+    footer form textarea {
+        width: 100%;
+    }
+    footer form button {
+        margin: .8rem 0 1.5rem;
+    }
+    footer form img {
+        display: none;
+    }
+}
+
+@media screen and (max-width:768px) {
+    header svg {
+        height: 30px;
+    }
+    .masthead h1 {
+        font-size: 2em;
+    }
+    main h2 {
+        font-size: 1.8em;
+    }
+    /* first section */
+    main section .row {
+        padding: 0;
+    }
+    /* second section */
+    main>section:nth-child(2) div.large-screen {
+        display: none;
+    }
+    .small-screen {
+        display: block;
+    }
+    .small-screen div {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    /* third section */
+    main>section:nth-child(3) {
+        text-align: center;
+        margin-top: 140px;
+    }
+    main section:nth-child(3) div:nth-child(1) {
+        top: -110px;
+    }
+    main section:nth-child(3) img {
+        width: 70%;
+    }
+    .balloon {
+        padding: 1.5rem;
+    }
+    .balloon:before {
+        margin-left: 60px;
+        border: 15px solid transparent;
+        border-top: 20px solid #f0f8ff;
+    }
+    .balloon h3 {
+        font-size: 1em;
+    }
+    /* footer */
+    footer>div:nth-child(1) img {
+        width: 20%;
+    }
+}
+
+@media screen and (max-width:500px) {
+    /* third section */
+    main section:nth-child(3) div:nth-child(1) {
+        top: -90px;
+        right: 10%;
+    }
+    main section:nth-child(3) img {
+        width: 90%;
+    }
+    .balloon {
+        padding: 1rem 1.5rem;
+    }
+    .balloon:before {
+        margin-left: 0px;
+    }
 }

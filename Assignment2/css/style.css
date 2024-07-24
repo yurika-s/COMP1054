@@ -6,9 +6,35 @@ body {
     background-color: #FFD200;
     color: #5a1f06;
 }
-
 h1 {
-    color: #f0f8ff;
+    font-family: "Patua One", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Pridi", serif;
+    font-style: normal;
+}
+p,
+li,
+a,
+label,
+input,
+textarea,
+button,
+div {
+    font-size: 1.2em;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+ul {
+    list-style: none;
+    padding: 0;
 }
 
 /* 
@@ -28,6 +54,14 @@ header svg {
     padding: 4rem;
     background: url("../image/hero.jpg") no-repeat;
     background-size: cover;
+}
+.masthead h1 {
+    font-size: 3em;
+    text-align: center;
+    color: #f0f8ff;
+    text-align: center;
+    text-shadow: 4px 3px 3px rgba(0, 0, 0, .8);
+    letter-spacing: 2px;
 }
 
 /* 

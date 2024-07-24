@@ -86,6 +86,170 @@ main section .zoom-in figure {
 .zoom-in .mask h3 {
     padding: 0 .5em;
 }
+/* second section */
+main>section:nth-child(2) div {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+main>section:nth-child(2) div img {
+    width: 100%;
+    height: auto;
+    border: #5a1f06 1px solid;
+}
+main p.warning {
+    text-align: center;
+    font-size: .9em;
+}
+main p span {
+    font-weight: bold;
+}
+
+/* visibility state and fade */
+.visible {
+    visibility: visible;
+}
+.hidden {
+    visibility: hidden;
+}
+.fade-in {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/* from bottom */
+.fade-up {
+    animation-name: fadeUp;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* from above */
+.fade-down {
+    animation-name: fadeDown;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* from left */
+.fade-left {
+    animation-name: fadeLeft;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+@keyframes fadeLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* from right */
+.fade-right {
+    animation-name: fadeRight;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+@keyframes fadeRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* third section */
+main>section:nth-child(3) {
+    text-align: right;
+    position: relative;
+    margin-top: 180px;
+}
+main section:nth-child(3) div:nth-child(1) {
+    position: absolute;
+    top: -130px;
+    right: 30%;
+}
+main section:nth-child(3) img {
+    width: 50%;
+}
+.balloon {
+    position: relative;
+    display: inline-block;
+    padding: 2rem;
+    max-width: 100%;
+    font-size: 1.5em;
+    background: #f0f8ff;
+    border-radius: 2rem;
+}
+.balloon:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: 100px;
+    border: 25px solid transparent;
+    border-top: 30px solid #f0f8ff;
+}
+.balloon h3 {
+    margin: 0;
+    padding: 0;
+    font-family: "Spicy Rice", serif;
+    font-weight: 500;
+    font-size: 1.5em;
+    letter-spacing: 1.5px;
+}
+.balloon h3 span:nth-child(1) {
+    color: #e3261d;
+}
+.balloon h3 span:nth-child(2) {
+    color: #1da93f;
+}
+.balloon h3 span:nth-child(3) {
+    color: #1c5caa;
+}
+.balloon h3 span:nth-child(4) {
+    color: #F18C1B;
+}
 
 /* 
 * footer

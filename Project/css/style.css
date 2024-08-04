@@ -1,0 +1,17 @@
+/* common */
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0px;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: auto;
+    grid-template-areas:
+        'header header header header'
+        'mast mast mast mast'
+        'main1 main1 main1 main1'
+        'main2 main2 main2 main2'
+        'footer footer footer footer'
+    ;
+}

@@ -1,17 +1,382 @@
-/* common */
+/* 
+* common
+*/
 html {
     scroll-behavior: smooth;
 }
 body {
     margin: 0px;
+    position: relative;
+}
+
+h1 {
+    font-family: "Russo One", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Jura", sans-serif;
+    font-style: normal;
+}
+p,
+li,
+a,
+label,
+input,
+textarea,
+button,
+div {
+    font-size: 1.2em;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+}
+ul,
+menu {
+    list-style: none;
+    padding: 0;
+}
+
+/* 
+* header
+*/
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    font-family: "Jura", sans-serif;
+}
+header>div {
+    display: flex;
+    justify-content: space-between;
+    padding: .5em 4rem;
+}
+
+header img {
+    height: 40px;
+}
+
+header nav menu {
+    display: flex;
+    justify-content: space-between;
+    font-size: .7em;
+}
+
+header nav menu li {
+    margin-right: 1.2em;
+    position: relative;
+}
+
+header nav menu li:last-child {
+    margin-right: 0;
+}
+
+header nav menu>li>a {
+    font-family: "Jura", sans-serif;
+    font-weight: 500;
+    color: #e0e0e0;
+}
+
+header nav menu>li:hover>a {
+    color: #fff;
+    border-bottom: #f4c603 solid 2px;
+    padding-bottom: .1em;
+    transition: all .3s ease;
+}
+
+header nav menu>li:nth-child(3):hover>a {
+    border-bottom: 0;
+}
+
+header nav menu li a.active {
+    border-bottom: #f4c603 solid 2px;
+    padding-bottom: .1em;
+}
+
+/* dropdown menu */
+nav menu li .dropdown {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    padding-left: 1em;
+    top: .8em;
+    left: 0;
+    display: none;
+    background: #f8f8f8;
+    transition: all .25s linear;
+    border-radius: 7px;
+}
+nav menu li:hover>.dropdown,
+nav menu li .dropdown:hover {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+    min-width: 200px;
+    text-align: left;
+    padding-top: 20px;
+}
+nav menu li .dropdown li {
+    clear: both;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+    border-style: none;
+}
+
+header nav menu li .dropdown a {
+    transition: all .5s ease;
+    color: #1e1d1d;
+    font-size: 1em;
+}
+
+nav menu li .dropdown li a:hover {
+    color: #7a7a7a;
+    border-bottom: 2px solid #f4c603;
+    padding-bottom: .1em;
+    transition: all .3s ease;
+}
+
+header nav menu li .dropdown a span {
+    display: none;
+    opacity: 0;
+    color: #f4c603;
+    margin-right: .5em;
+}
+header nav menu li .dropdown a:hover span {
+    display: inline;
+    opacity: 1;
+    transition: all .5s ease;
+}
+
+/* scrolled */
+.scrolled header {
+    background-color: #f0f8ff;
+    transition: 1s;
+}
+
+.scrolled header nav menu li a {
+    color: #1e1d1d;
+}
+
+/* 
+** masthead
+*/
+.masthead {
+    background: url("../image/hero.jpeg") no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    filter: contrast(70%);
+}
+
+.masthead h1 {
+    font-size: 3em;
+    text-align: center;
+    color: #f0f8ff;
+    text-shadow: 4px 3px 3px rgba(0, 0, 0, .8);
+    letter-spacing: 2px;
+}
+
+.masthead video {
+    height: 100vh;
+}
+
+
+/* 
+* main
+*/
+
+main h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-top: 0;
+}
+
+main section {
+    padding: 3rem 5rem;
+}
+
+main section>div {
     display: grid;
-    grid-template-columns: repeat(4, 25%);
-    grid-template-rows: auto;
-    grid-template-areas:
-        'header header header header'
-        'mast mast mast mast'
-        'main1 main1 main1 main1'
-        'main2 main2 main2 main2'
-        'footer footer footer footer'
-    ;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 4rem;
+}
+
+main section.services .service {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+}
+
+main section.services .service>div {
+    display: inline-block;
+    background-color: #f4c603;
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    position: relative;
+    margin: 0 auto;
+}
+
+main section.services .service>div i {
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+main section.services .service>div i.sev-icon {
+    font-size: 2.5em;
+    transform: translate(-50%, -50%);
+}
+
+main section.services .service>div i.focus {
+    display: none;
+    opacity: 0;
+    font-size: 1.5em;
+    transform: translate(-50%, -70%);
+}
+
+main section.services .service>div span {
+    display: none;
+    opacity: 0;
+    font-size: .6em;
+    color: #fff;
+    position: absolute;
+    bottom: 20%;
+    left: 20%
+}
+
+main section.services .service>div:hover i.sev-icon {
+    display: none;
+}
+
+main section.services .service>div:hover i.focus {
+    display: inline;
+    opacity: 1;
+    transition: all .3s ease-in;
+}
+
+main section.services .service>div:hover span {
+    display: inline;
+    opacity: 1;
+    transition: all .3s ease-in;
+}
+
+
+
+/* products */
+main section.products {
+    background-color: #f3f3f3;
+}
+
+/* cards */
+.card-row {
+    grid-gap: 3rem;
+    text-align: center;
+}
+.card-row>div {
+    border-radius: 8px;
+    color: #1e1d1d;
+    font-size: 1em;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+}
+
+.card-row>div>div {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.card-row img {
+    width: 100%;
+    margin: auto;
+    border-radius: 8px 8px 0 0;
+    border-bottom: 1px solid #1e1d1d;
+}
+
+.card-row div:hover img {
+    transform: scale(1.3);
+    opacity: .8;
+}
+
+.card-row div h3 {
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.card-row div p:last-child {
+    bottom: 10%;
+}
+.card-row div p a {
+    font-size: .9em;
+    color: #f4c603;
+}
+
+.card-row div p a:hover {
+    font-size: 1em;
+    text-decoration: underline;
+}
+
+/* 
+* footer
+*/
+footer {
+    color: #ffffe5;
+    background: url("../image/footer-bg.jpg") top center no-repeat;
+    background-size: cover;
+    padding: 4rem;
+    position: relative;
+    filter: contrast(50%);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, .8);
+}
+footer h3 {
+    font-size: 1.3em;
+    text-align: center;
+    margin: 0 0 .5rem;
+    letter-spacing: 1px;
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+}
+
+footer p {
+    font-size: .8em;
+    font-weight: 400;
+    margin: 0 0 .3rem;
+    text-align: center;
+}
+
+footer .icons ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+footer .icons ul li {
+    margin-right: .5rem;
+}
+
+footer .icons ul li:last-child {
+    margin-right: 0;
+}
+
+footer .icons ul li a {
+    font-size: 1em;
+    color: #ffffe5;
+}
+
+footer .icons i {
+    font-size: 1em;
 }

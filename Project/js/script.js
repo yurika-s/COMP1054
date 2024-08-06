@@ -57,5 +57,9 @@ function fadeUpProducts() {
 }
 
 window.addEventListener("scroll", toggleScrolled);
-window.addEventListener("scroll", fadeUpServices);
-window.addEventListener("scroll", fadeUpProducts);
+$(function () {
+    if ($('body').attr('id') === 'home') {
+        window.addEventListener("scroll", fadeUpServices);
+        window.addEventListener("scroll", fadeUpProducts);
+    }
+});

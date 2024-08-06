@@ -23,6 +23,14 @@ h6 {
     font-family: "Jura", sans-serif;
     font-style: normal;
 }
+h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+h4 {
+    font-size: 1.2em;
+    font-weight: 700;
+}
 p,
 li,
 a,
@@ -31,7 +39,6 @@ input,
 textarea,
 button,
 div {
-    font-size: 1.2em;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -57,16 +64,17 @@ header>div {
     display: flex;
     justify-content: space-between;
     padding: .5em 4rem;
+    align-items: center;
 }
 
 header img {
     height: 40px;
+
 }
 
 header nav menu {
     display: flex;
     justify-content: space-between;
-    font-size: .7em;
 }
 
 header nav menu li {
@@ -82,6 +90,7 @@ header nav menu>li>a {
     font-family: "Jura", sans-serif;
     font-weight: 500;
     color: #e0e0e0;
+    font-size: 1.1em;
 }
 
 header nav menu>li:hover>a {
@@ -106,7 +115,7 @@ nav menu li .dropdown {
     opacity: 0;
     position: absolute;
     padding-left: 1em;
-    top: .8em;
+    top: .6em;
     left: 0;
     display: none;
     background: #f8f8f8;
@@ -120,13 +129,13 @@ nav menu li .dropdown:hover {
     display: block;
     min-width: 200px;
     text-align: left;
-    padding-top: 20px;
+    padding-top: 1rem;
 }
 nav menu li .dropdown li {
     clear: both;
     width: 100%;
     text-align: left;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
     border-style: none;
 }
 
@@ -169,16 +178,27 @@ header nav menu li .dropdown a:hover span {
 ** masthead
 */
 .masthead {
+    position: relative;
+    overflow: hidden;
+    filter: contrast(70%);
+}
+
+.home .masthead {
     background: url("../image/hero.jpeg") no-repeat;
     background-size: cover;
     height: 100vh;
-    position: relative;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    filter: contrast(70%);
+}
+
+.subpage .masthead {
+    background: url("../image/page-title.jpeg") no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    padding: 2rem 0;
 }
 
 .masthead h1 {
@@ -189,13 +209,8 @@ header nav menu li .dropdown a:hover span {
     letter-spacing: 2px;
 }
 
-.masthead video {
-    height: 100vh;
-}
-
-
 /* 
-* main
+* main common
 */
 
 main h2 {
@@ -208,55 +223,66 @@ main section {
     padding: 3rem 5rem;
 }
 
-main section>div {
+/* 
+* home page
+*/
+.home main section>div {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 0 4rem;
 }
 
+/* services section */
 main section.services .service {
     display: flex;
     flex-direction: column-reverse;
     text-align: center;
+    padding: 2rem;
 }
 
 main section.services .service>div {
     display: inline-block;
     background-color: #f4c603;
-    width: 5em;
-    height: 5em;
+    width: 8em;
+    height: 8em;
     border-radius: 50%;
     position: relative;
     margin: 0 auto;
 }
 
 main section.services .service>div i {
-    color: #fff;
+    color: #f3f3f3;
     position: absolute;
     top: 50%;
     left: 50%;
 }
 
 main section.services .service>div i.sev-icon {
-    font-size: 2.5em;
+    font-size: 4em;
     transform: translate(-50%, -50%);
 }
 
 main section.services .service>div i.focus {
     display: none;
     opacity: 0;
-    font-size: 1.5em;
+    font-size: 2em;
     transform: translate(-50%, -70%);
+}
+
+main section.services .service:nth-child(2)>div i.focus {
+    transform: translate(-50%, -100%);
 }
 
 main section.services .service>div span {
     display: none;
     opacity: 0;
-    font-size: .6em;
     color: #fff;
     position: absolute;
-    bottom: 20%;
+    bottom: 25%;
     left: 20%
+}
+main section.services .service:nth-child(2)>div span {
+    bottom: 20%;
 }
 
 main section.services .service>div:hover i.sev-icon {
@@ -275,9 +301,7 @@ main section.services .service>div:hover span {
     transition: all .3s ease-in;
 }
 
-
-
-/* products */
+/* products section */
 main section.products {
     background-color: #f3f3f3;
 }
@@ -330,6 +354,117 @@ main section.products {
     text-decoration: underline;
 }
 
+
+/* 
+* about page
+*/
+.subpage main section.about {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 960px;
+    margin: 0 auto;
+}
+.subpage main section.about>div:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+}
+.subpage main section.about>div:nth-child(1)>div {
+    background-color: #f2ecec;
+    padding: 2rem;
+}
+
+.subpage main section.about h2 {
+    text-align: left;
+    color: #10054c;
+}
+.subpage main section.about h3,
+.subpage main section.about h4 {
+    margin: 0;
+}
+.subpage main section.about p {
+    line-height: 1.2em;
+    letter-spacing: .1em;
+}
+.subpage main section.about h4 {
+    color: #7a7a7a;
+}
+
+.supage main section.about img {
+    width: 100%;
+
+}
+
+
+/* 
+* contact page
+*/
+.contact-form {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 720px;
+}
+
+.form-item {
+    border-top: 1px solid #ddd;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.form-item:nth-child(4) {
+    border-bottom: 1px solid #ddd;
+}
+.label {
+    width: 100%;
+    max-width: 248px;
+    letter-spacing: 0.05em;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+.label.label-message {
+    margin-top: 8px;
+    margin-bottom: auto;
+}
+.form-base {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-left: 2rem;
+    padding-left: 1em;
+    padding-right: 1em;
+    flex: 1;
+    width: 100%;
+    max-width: 410px;
+    background: #eaedf2;
+    font-size: 1.1em;
+}
+.form-input {
+    height: 48px;
+}
+.form-textarea {
+    padding-top: .5em;
+    height: 216px;
+}
+.form-btn {
+    border-radius: 6px;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem 3.5rem;
+    display: block;
+    letter-spacing: 0.05em;
+    background-color: #f4c603;
+    color: #f3f3f3;
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-color: #efefef;
+}
+.form-btn:hover {
+    opacity: .8;
+}
+
+
 /* 
 * footer
 */
@@ -352,7 +487,6 @@ footer h3 {
 }
 
 footer p {
-    font-size: .8em;
     font-weight: 400;
     margin: 0 0 .3rem;
     text-align: center;
@@ -375,8 +509,4 @@ footer .icons ul li:last-child {
 footer .icons ul li a {
     font-size: 1em;
     color: #ffffe5;
-}
-
-footer .icons i {
-    font-size: 1em;
 }

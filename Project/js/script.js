@@ -2,6 +2,16 @@
 const LOGO_IMAGE = 'logo.png';
 const LOGO_IMAGE_YELLOW = 'logo-yellow.png';
 const IMAGE_DIRECTORY = 'image/';
+const SERVICE_SELECTORS = [
+    'div.service:nth-child(1)',
+    'div.service:nth-child(2)',
+    'div.service:nth-child(3)'
+];
+const PRODUCT_SELECTORS = [
+    '.card-row>div:nth-child(1)',
+    '.card-row>div:nth-child(2)',
+    '.card-row>div:nth-child(3)'
+];
 
 function toggleScrolled() {
     if (window.scrollY > 50) {
@@ -23,4 +33,29 @@ function toggleScrolled() {
     }
 }
 
+// fade base function
+function fadeUp(scrollTargetSelector, targetElements) {
+    var reveal = document.querySelector(scrollTargetSelector);
+    var windowHeight = window.innerHeight;
+    var elementTop = reveal.getBoundingClientRect().top;
+    var elementVisible = 100;
+    if (elementTop < windowHeight - elementVisible) {
+        targetElements.forEach(element => {
+            $(element).addClass('fade-up');
+        });
+    } else {
+        targetElements.forEach(element => {
+            $(element).removeClass('fade-up');
+        });
+    }
+}
+function fadeUpServices() {
+    fadeUp('section.services', SERVICE_SELECTORS)
+}
+function fadeUpProducts() {
+    fadeUp('section.products', PRODUCT_SELECTORS)
+}
+
 window.addEventListener("scroll", toggleScrolled);
+window.addEventListener("scroll", fadeUpServices);
+window.addEventListener("scroll", fadeUpProducts);

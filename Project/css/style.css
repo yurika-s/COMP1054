@@ -242,6 +242,7 @@ main section.services .service {
     flex-direction: column-reverse;
     text-align: center;
     padding: 2rem;
+    align-self: flex-start;
 }
 
 main section.services .service>div {
@@ -272,7 +273,6 @@ main section.services .service>div i.focus {
     font-size: 2em;
     transform: translate(-50%, -70%);
 }
-
 main section.services .service:nth-child(2)>div i.focus {
     transform: translate(-50%, -100%);
 }
@@ -303,6 +303,48 @@ main section.services .service>div:hover span {
     display: inline;
     opacity: 1;
     transition: all .3s ease-in;
+}
+
+/* fade animation */
+.fade-up {
+    animation-name: fadeUp;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.fade-left {
+    animation-name: fadeLeft;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+@keyframes fadeLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+main section.services .service:nth-child(2).fade-up {
+    animation-duration: 1s;
+}
+main section.services .service:nth-child(3).fade-up {
+    animation-duration: 1.5s;
 }
 
 /* products section */
@@ -358,6 +400,14 @@ main section.products {
     text-decoration: underline;
 }
 
+.card-row>div:nth-child(2).fade-up {
+    animation-duration: 1s;
+}
+.card-row>div:nth-child(3).fade-up {
+    animation-duration: 1.5s;
+}
+
+
 /* 
 * sub page common 
 */
@@ -398,7 +448,6 @@ main section.products {
     width: 100%;
 }
 
-
 /* 
 * products page 
 */
@@ -409,6 +458,7 @@ main section.products {
 }
 .subpage main section.product>div:nth-child(1) {
     order: 2;
+    animation-duration: 1s;
 }
 .subpage main section.product>div:nth-child(1) p.price {
     font-size: 1.5em;
@@ -484,15 +534,12 @@ main section.products {
 }
 
 .form-item {
-    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     width: 100%;
     display: flex;
     align-items: center;
-}
-.form-item:nth-child(4) {
-    border-bottom: 1px solid #ddd;
 }
 .label {
     width: 100%;

@@ -57,7 +57,7 @@ menu {
 header {
     position: fixed;
     width: 100%;
-    z-index: 9999;
+    z-index: 50;
     font-family: "Jura", sans-serif;
 }
 header>div {
@@ -96,7 +96,7 @@ header nav menu>li>a {
 header nav menu>li:hover>a {
     color: #fff;
     border-bottom: #f4c603 solid 2px;
-    padding-bottom: .1em;
+    padding-bottom: 5px;
     transition: all .3s ease;
 }
 
@@ -106,7 +106,7 @@ header nav menu>li:nth-child(3):hover>a {
 
 header nav menu li a.active {
     border-bottom: #f4c603 solid 2px;
-    padding-bottom: .1em;
+    padding-bottom: 5px;
 }
 
 /* dropdown menu */
@@ -115,12 +115,13 @@ nav menu li .dropdown {
     opacity: 0;
     position: absolute;
     padding-left: 1em;
-    top: .6em;
+    top: 5px;
     left: 0;
     display: none;
     background: #f8f8f8;
     transition: all .25s linear;
     border-radius: 7px;
+    z-index: 10;
 }
 nav menu li:hover>.dropdown,
 nav menu li .dropdown:hover {
@@ -221,6 +222,9 @@ main h2 {
 
 main section {
     padding: 3rem 5rem;
+}
+main section h2 {
+    color: #19096f;
 }
 
 /* 
@@ -354,15 +358,20 @@ main section.products {
     text-decoration: underline;
 }
 
-
+/* 
+* sub page common 
+*/
+.subpage main section h2 {
+    text-align: left;
+}
 /* 
 * about page
 */
 .subpage main section.about {
-    display: grid;
-    grid-template-columns: 50% 50%;
     width: 960px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
 }
 .subpage main section.about>div:nth-child(1) {
     display: flex;
@@ -373,10 +382,6 @@ main section.products {
     padding: 2rem;
 }
 
-.subpage main section.about h2 {
-    text-align: left;
-    color: #10054c;
-}
 .subpage main section.about h3,
 .subpage main section.about h4 {
     margin: 0;
@@ -389,11 +394,85 @@ main section.products {
     color: #7a7a7a;
 }
 
-.supage main section.about img {
+.subpage main section.about img {
     width: 100%;
-
 }
 
+
+/* 
+* products page 
+*/
+.subpage main section.product {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding-bottom: 0;
+}
+.subpage main section.product>div:nth-child(1) {
+    order: 2;
+}
+.subpage main section.product>div:nth-child(1) p.price {
+    font-size: 1.5em;
+    color: #d2af13;
+    font-weight: 500;
+}
+.subpage main section.product>div:nth-child(1) div.feature {
+    padding: 0.5rem 0 1rem;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.subpage main section.product>div:nth-child(1) div.feature>div {
+    display: flex;
+}
+.subpage main section.product p {
+    margin: .3em 0;
+}
+.subpage main section.product>div:nth-child(1) div.feature p:nth-child(1) {
+    font-weight: 600;
+    width: 200px;
+}
+.subpage main section.product>div:nth-child(1) i {
+    color: #df8627;
+    margin-right: 8px;
+}
+.subpage main section.product>div:nth-child(2) {
+    order: 1;
+    padding: 0 3rem;
+}
+.subpage main section.product>div:nth-child(2) img {
+    width: 100%;
+}
+.add-btn {
+    border-radius: 6px;
+    margin-top: 1.5rem;
+    padding: .5rem 1rem;
+    display: block;
+    letter-spacing: 0.05em;
+    background-color: #19096f;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    border-color: #efefef;
+}
+.add-btn:hover {
+    opacity: .8;
+}
+.subpage main section.product+section {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.subpage main section.product+section.right {
+    justify-content: end;
+}
+.subpage main section.product+section a {
+    padding-top: 0;
+    color: #19096f;
+    cursor: pointer;
+}
+.subpage main section.product+section a:hover {
+    opacity: .8;
+    text-decoration: underline;
+}
 
 /* 
 * contact page
@@ -439,18 +518,18 @@ main section.products {
     font-size: 1.1em;
 }
 .form-input {
-    height: 48px;
+    height: 45px;
 }
 .form-textarea {
     padding-top: .5em;
-    height: 216px;
+    height: 200px;
 }
 .form-btn {
     border-radius: 6px;
     margin-top: 2rem;
     margin-left: auto;
     margin-right: auto;
-    padding: 1rem 3.5rem;
+    padding: .8rem 3rem;
     display: block;
     letter-spacing: 0.05em;
     background-color: #f4c603;

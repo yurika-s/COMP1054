@@ -12,24 +12,31 @@ const PRODUCT_SELECTORS = [
     '.card-row>div:nth-child(2)',
     '.card-row>div:nth-child(3)'
 ];
+let isYellowLogo = true;
 
 function toggleScrolled() {
     if (window.scrollY > 50) {
-        $('body').addClass('scrolled');
-        // set default image path
-        let imagePath = './' + IMAGE_DIRECTORY + LOGO_IMAGE;
-        if ($('body').attr('id') === 'products') {
-            // change the path when the page is products
-            imagePath = '../' + IMAGE_DIRECTORY + LOGO_IMAGE;
+        if (isYellowLogo) {
+            isYellowLogo = false;
+            $('body').addClass('scrolled');
+            // set default image path
+            let imagePath = './' + IMAGE_DIRECTORY + LOGO_IMAGE;
+            if ($('body').attr('id') === 'products') {
+                // change the path when the page is products
+                imagePath = '../' + IMAGE_DIRECTORY + LOGO_IMAGE;
+            }
+            $('header .logo img').attr('src', imagePath)
         }
-        $('header .logo img').attr('src', imagePath)
     } else {
-        $('body').removeClass('scrolled');
-        let imagePath = './' + IMAGE_DIRECTORY + LOGO_IMAGE_YELLOW;
-        if ($('body').attr('id') === 'products') {
-            imagePath = '../' + IMAGE_DIRECTORY + LOGO_IMAGE_YELLOW;
+        if (!isYellowLogo) {
+            isYellowLogo = true;
+            $('body').removeClass('scrolled');
+            let imagePath = './' + IMAGE_DIRECTORY + LOGO_IMAGE_YELLOW;
+            if ($('body').attr('id') === 'products') {
+                imagePath = '../' + IMAGE_DIRECTORY + LOGO_IMAGE_YELLOW;
+            }
+            $('header .logo img').attr('src', imagePath)
         }
-        $('header .logo img').attr('src', imagePath)
     }
 }
 

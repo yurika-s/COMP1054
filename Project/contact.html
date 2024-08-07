@@ -26,7 +26,7 @@
 
 <body class="subpage">
     <header>
-        <div>
+        <div class="desktop-nav">
             <!-- header logo -->
             <a href="index.html" class="logo">
                 <img src="./image/logo-yellow.png" alt="logo">
@@ -48,6 +48,27 @@
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
         </div>
+        <div class="mobile-nav">
+            <input id="burger" type="checkbox">
+            <label for="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav>
+                <div>
+                    <a href="index.html"><img src="./image/logo.png" alt="header logo"></a>
+                </div>
+                <menu>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./products/orzorz.html">Products(Orzorz Star)</a></li>
+                    <li><a href="./products/sega.html">Products(SEGA Homestar)</a></li>
+                    <li><a href="./products/fulen.html">Products(FULEN Star)</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </menu>
+            </nav>
+        </div>
     </header>
     <section class="masthead">
         <h1>Contact</h1>
@@ -57,19 +78,22 @@
             <form class="contact-form" action="#" method="post">
                 <div class="form-item">
                     <p class="label">Name</p>
-                    <input type="text" class="form-base form-base form-input" placeholder="John Smith">
+                    <input type="text" class="form-base form-input" placeholder="John Smith">
+                    <input type="text" class="form-base form-input" placeholder="Name">
                 </div>
                 <div class="form-item">
                     <p class="label">Email</p>
                     <input type="email" class="form-base form-input" placeholder="example@gmail.com">
+                    <input type="email" class="form-base form-input" placeholder="Email">
                 </div>
                 <div class="form-item">
                     <p class="label">Phone</p>
                     <input type="text" class="form-base form-input" placeholder="0001234567">
+                    <input type="text" class="form-base form-input" placeholder="Phone">
                 </div>
                 <div class="form-item">
                     <p class="label label-message">Message</p>
-                    <textarea class="form-base form-textarea" placeholder="message"></textarea>
+                    <textarea class="form-base form-textarea" placeholder="Message"></textarea>
                 </div>
                 <input type="submit" class="form-btn" value="Submit">
             </form>

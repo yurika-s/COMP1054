@@ -723,6 +723,7 @@ footer .icons ul li a {
     }
     .mobile-nav div:nth-child(1) {
         flex-grow: 1;
+        padding: 15px;
     }
     .mobile-nav div:nth-child(1) a img {
         height: 50px;
@@ -780,12 +781,11 @@ footer .icons ul li a {
         transition: .5s;
         transition-delay: .5s;
         overflow: hidden;
-        padding: 15px;
     }
     .mobile-nav input~nav>menu {
         text-align: center;
         position: absolute;
-        top: 20%;
+        top: 10%;
         left: 20%;
         right: 20%;
         list-style: none;
@@ -905,6 +905,10 @@ footer .icons ul li a {
 }
 
 @media screen and (max-width:500px) {
+    /* header */
+    header nav menu>li>a {
+        font-size: 1em;
+    }
     /* home page */
     .home main section.products {
         padding: 2rem;
